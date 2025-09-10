@@ -52,95 +52,15 @@
                         </form>
                         <div class="search-options">
                           <button class="breakfast">Breakfast</button>
-                          <button class="lunch" id="lunch">Lunch</button>
-                          <button class="Dinner">Dinner</button>
+                          <button class="lunch">Lunch</button>
+                          <button class="dinner">Dinner</button>
+                          <button class="show-all">Show All</button>
                         </div>
                     </section>
                 </section>
                 <section class="recipe-content">
                     <section class="content-top">
-                        <section class="recipe-template"  id="click">
-                            <section class="recipe-box">
-                                <section class="recipe-image">
-                                    <img src="./pics/recipe pics/1.jpg" alt="Recipe 1">
-                                </section>
-                                <section class="recipe-info">
-                                    <h3>Banana Oat Pancakes</h3>
-                                    <hr class="header-hr">
-                                    <p>These Banana Oat Pancakes are the perfect start to your day—naturally sweet, protein-rich, and fluffy without refined sugar. A quick and healthy twist on classic pancakes!</p>
-                                    <button type="button" class="recipe-btn">View Recipe</button>
-                                </section>
-                            </section>
-                        </section>
-
-                        <section class="recipe-template">
-                            <section class="recipe-box">
-                                <section class="recipe-image">
-                                    <img src="./pics/recipe pics/2.jpg" alt="Recipe 2">
-                                </section>
-                                <section class="recipe-info">
-                                    <h3>Greek Yogurt Parfait</h3>
-                                    <hr class="header-hr">
-                                    <p>Layered with creamy yogurt, crunchy granola, and fresh berries, this parfait is a delicious balance of taste and nutrition. A refreshing breakfast or post-workout snack!</p>
-                                    <button type="button" class="recipe-btn">View Recipe</button>
-                                </section>
-                            </section>                                
-                        </section>
-
-                        <section class="recipe-template">
-                            <section class="recipe-box">
-                                <section class="recipe-image">
-                                    <img src="./pics/recipe pics/3.jpg" alt="Recipe 3">
-                                </section>
-                                <section class="recipe-info">
-                                    <h3>Avocado Egg Salad Wrap</h3>
-                                    <hr class="header-hr">
-                                    <p>Packed with healthy fats and protein, this Avocado Egg Salad Wrap is creamy, filling, and perfect for a light lunch. A simple recipe that keeps you fueled for hours!</p>
-                                    <button type="button" class="recipe-btn">View Recipe</button>
-                                </section>
-                            </section>
-                        </section>
-
-                        <section class="recipe-template">
-                            <section class="recipe-box">
-                                <section class="recipe-image">
-                                    <img src="./pics/recipe pics/4.jpg" alt="Recipe 1">
-                                </section>
-                                <section class="recipe-info">
-                                    <h3>Quinoa Veggie Bowl</h3>
-                                    <hr class="header-hr">
-                                    <p>This Quinoa Veggie Bowl combines plant-based protein with nutrient-rich broccoli and chickpeas. A wholesome and satisfying meal for any fitness lifestyle.</p>
-                                    <button type="button" class="recipe-btn">View Recipe</button>
-                                </section>
-                            </section>
-                        </section>
-                        <section class="recipe-template">
-                            <section class="recipe-box">
-                                <section class="recipe-image">
-                                    <img src="./pics/recipe pics/5.jpg" alt="Recipe 2">
-                                </section>
-                                <section class="recipe-info">
-                                    <h3>Grilled Salmon & Spinach</h3>
-                                    <hr class="header-hr">
-                                    <p>High in protein and omega-3s, this Grilled Salmon & Spinach dish is as nutritious as it is tasty. A light, energizing dinner ready in just minutes.</p>
-                                    <button type="button" class="recipe-btn">View Recipe</button>
-                                </section>
-                            </section>
-                        </section>
-
-                        <section class="recipe-template">
-                            <section class="recipe-box">
-                                <section class="recipe-image">
-                                    <img src="./pics/recipe pics/6.jpg" alt="Recipe 3">
-                                </section>
-                                <section class="recipe-info">
-                                    <h3>Chicken & Sweet Potato Bake</h3>
-                                    <hr class="header-hr">
-                                    <p>Juicy chicken paired with sweet, roasted potatoes makes this a balanced and hearty dinner. A one-pan recipe full of flavor and fitness-friendly fuel.</p>
-                                    <button type="button" class="recipe-btn">View Recipe</button>
-                                </section>
-                            </section>
-                        </section>
+                        <!-- Recipe cards will be dynamically generated here -->
                     </section>
                 </section>
             </section>
@@ -380,23 +300,124 @@
 </script>
 
 <script>
-// Update the filterByMealType function in recipe.js
+// --- Recipe card filtering by mealType and search with debouncing ---
+document.addEventListener('DOMContentLoaded', function () {
+  // Parse recipesData from JSON script tag
+  let recipesData = [];
+  try {
+    recipesData = JSON.parse(document.getElementById('recipesDataJson').textContent);
+  } catch (e) {}
 
-function filterByMealType(mealType) {
-  let matchingRecipes = 0;
-  
-  recipeCards.forEach(card => {
-    const idx = Number(card.dataset.recipeId);
-    const recipe = recipesData[idx];
-    
-    if (recipe.mealType === mealType && matchingRecipes < 2) {
-      card.style.display = "";
-      matchingRecipes++;
-    } else {
-      card.style.display = "none";
-    }
+  // Get the container for recipe cards
+  const contentTop = document.querySelector('.content-top');
+  const searchInput = document.getElementById('searchInput');
+
+  let currentMealFilter = null; // null means show all
+  let searchTerm = '';
+
+  // Helper: generate a recipe card element with data-mealtype attribute
+  function createRecipeCard(recipe) {
+    const template = document.createElement('section');
+    template.className = 'recipe-template';
+    template.setAttribute('data-mealtype', recipe.mealType);
+    template.setAttribute('data-recipe-id', recipe.id);
+    template.setAttribute('data-title', recipe.title.toLowerCase());
+    template.setAttribute('data-description', recipe.description.toLowerCase());
+    template.innerHTML = `
+      <section class="recipe-box">
+        <section class="recipe-image">
+          <img src="./pics/recipe pics/${recipe.id}.jpg" alt="Recipe ${recipe.id}">
+        </section>
+        <section class="recipe-info">
+          <h3>${recipe.title}</h3>
+          <hr class="header-hr">
+          <p>${recipe.description}</p>
+          <button type="button" class="recipe-btn">View Recipe</button>
+        </section>
+      </section>
+    `;
+    return template;
+  }
+
+  // Remove any existing recipe cards
+  while (contentTop.firstChild) contentTop.removeChild(contentTop.firstChild);
+  // Add all recipe cards to DOM with data-mealtype
+  recipesData.forEach(recipe => {
+    contentTop.appendChild(createRecipeCard(recipe));
   });
-}
+
+  // Ensure the recipe cards container has the 'recipe-container' class
+  const cardsContainer = document.querySelector(".recipe-container") || contentTop;
+  if (cardsContainer && !cardsContainer.classList.contains("recipe-container")) {
+      cardsContainer.classList.add("recipe-container");
+  }
+
+  // Function to update card visibility based on currentMealFilter and searchTerm
+  function updateVisibility() {
+    const cards = contentTop.querySelectorAll('.recipe-template');
+    const lowerSearchTerm = searchTerm.toLowerCase().trim();
+    cards.forEach(card => {
+      const mealType = card.getAttribute('data-mealtype');
+      const title = card.getAttribute('data-title');
+      const description = card.getAttribute('data-description');
+
+      // Check meal type filter
+      const mealMatch = !currentMealFilter || mealType === currentMealFilter;
+
+      // Check search term filter (only if mealMatch is true)
+      const searchMatch = !lowerSearchTerm || title.includes(lowerSearchTerm) || description.includes(lowerSearchTerm);
+
+      if (mealMatch && searchMatch) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    // Add or remove 'search-active' class on cardsContainer based on search input
+    if (lowerSearchTerm) {
+      cardsContainer.classList.add('search-active');
+    } else {
+      cardsContainer.classList.remove('search-active');
+    }
+  }
+
+  // Filtering logic for meal type buttons
+  function filterByMealType(mealType) {
+    currentMealFilter = mealType || null;
+    updateVisibility();
+  }
+
+  // Debounce helper
+  function debounce(func, wait) {
+    let timeout;
+    return function(...args) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+  }
+
+  // Search input event handler with debounce
+  const handleSearchInput = debounce(() => {
+    searchTerm = searchInput.value;
+    updateVisibility();
+  }, 300);
+
+  // Add event listeners to filter buttons
+  const btnBreakfast = document.querySelector('.breakfast');
+  const btnLunch = document.querySelector('.lunch');
+  const btnDinner = document.querySelector('.dinner');
+  const btnShowAll = document.querySelector('.show-all');
+  if (btnBreakfast) btnBreakfast.addEventListener('click', () => filterByMealType('breakfast'));
+  if (btnLunch) btnLunch.addEventListener('click', () => filterByMealType('lunch'));
+  if (btnDinner) btnDinner.addEventListener('click', () => filterByMealType('dinner'));
+  if (btnShowAll) btnShowAll.addEventListener('click', () => filterByMealType(null));
+
+  // Add event listener to search input
+  if (searchInput) {
+    searchInput.addEventListener('input', handleSearchInput);
+  }
+});
 </script>
 </body>
 
