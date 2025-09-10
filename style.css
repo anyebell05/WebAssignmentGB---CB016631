@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
 
 
@@ -40,6 +39,7 @@ body{
     width: 100%;
     transition: transform 0.5s ease; 
     z-index: 1000;
+    opacity: 0.95;
 }
 
 
@@ -107,91 +107,195 @@ body{
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-color: #6FCF97;
+    background-color: #fafaf4;
+    justify-content: center;
+    align-items: center;
 }
 
- .welcome{
-    padding-top: 110px;
+.upper-part{
+    flex: 1;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 35vh;
-    text-align: center;
     background-image: linear-gradient(to bottom, #FAFAF5, #DFF6E4); 
-}
-
-.welcome-title{
-    font-size: 70px;
-    margin-bottom: 10px;
-    color: #6FCF97;
-}
-
-.welcome-description{
-    font-size: 38px;
-    color: #363636;
-}
-
-.description{
-    height: 45vh;
-    background-color: #DFF6E4;
-    display: flex;
+    justify-content: flex-end;
     align-items: center;
-    justify-content: center;
 }
+
+.upper-part h2{
+  font-size: 6em;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #6FCF97;
+  line-height: 100%;
+
+}
+
+.upper-quote p{
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0rem;
+    color: #31363F;
+}
+
+.bottom-part{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #DFF6E4;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+} 
+
+.bottom-part h2{
+  font-size: 6rem;
+  text-align: center;
+  color: #ffffff;
+  line-height: 120%;
+  margin-bottom: 0rem;
+  }
+
+.bottom-bg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 98%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./pics/bg.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 40px 40px 0px 0px ;
+}
+
 
 .description-bg{
-    
-    background-color: #dff6e4;
     width: 100%;
-    height: 66%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
 }
 
+/* Visually striking and interactive explore-more button */
+/* Professional, flat and sharp explore-more button */
+.explore-more button {
+  background: #FFA726;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.85rem 1.5rem;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(45, 84, 94, 0.06);
+  cursor: pointer;
+  transition: background 0.23s cubic-bezier(0.4,0,0.2,1), 
+              color 0.23s cubic-bezier(0.4,0,0.2,1), 
+              box-shadow 0.23s cubic-bezier(0.4,0,0.2,1), 
+              transform 0.18s cubic-bezier(0.4,0,0.2,1);
+  outline: none;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.explore-more button:hover,
+.explore-more button:focus-visible {
+  background: #3fa47a;
+  color: #fff;
+  box-shadow: 0 4px 18px rgba(45, 84, 94, 0.11), 0 1.5px 6px rgba(111, 207, 151, 0.06);
+  transform: translateY(-2px);
+}
+
+.explore-more button:active {
+  transform: translateY(0);
+  box-shadow: 0 1.5px 5px rgba(45, 84, 94, 0.08);
+}
+
+/* Enhanced Explore More Button Styles */
+.explore-more {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.bottom-slogan{
+  height: auto;
+  flex: 1;
+}
+
+.bottom-quote {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;           
+    gap: 20px;  
+    width: 100%;       
+    flex-direction: column;            
+}
+
+
+
+
+.description-bg{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .quote-card {
-  background: linear-gradient(135deg, #FAFAF5 100%);
-  border-radius: 20px;
-  box-shadow: 0 2px 7px rgba(0,0,0,.35);
-  border: 1px solid rgba(255,255,255,.1);
-  padding: 30px;
-  max-width: 80%;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  min-height: 150px;
-  transition: all 0.3s ease;
+    width: 600px;
+    margin: 0 auto; /* center horizontally */
+    padding: 5px 30px;
+    background: rgba(255, 255, 255, 0.2); /* semi-transparent background */
+    backdrop-filter: blur(10px); /* subtle blur for frosted glass effect */
+    border-radius: 15px; /* rounded corners */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* soft shadow */
+    text-align: center;
+    color: #fff; /* adjust based on your section background */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    transition: 0.3s;
 }
 
-.quote {
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.4;
-  opacity: 0;
-  transform: translateY(30px);
-  position: absolute;
-  inset: 0;
-  padding: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.8s ease-in-out;
+.quote-card:hover {
+    scale: 1.02;
 }
 
-.quote.active {
-  opacity: 1;
-  transform: translateY(0);
-  position: relative;
-  transition: all 0.8s ease-in-out;
+.quote-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.quote-card .author {
+    display: block;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #e2e2e2;
+}
+
+.quote-card .quote {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.quote-card .quote.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .author {
   display: block;
   margin-top: 15px;
-  font-size: 14px;
+  font-size: 8px;
   color: #60a5fa;
   font-weight: 600;
 }
@@ -206,34 +310,64 @@ body{
     margin-bottom: 1rem;
 }
 
-.explore-more{
-    height: 20vh;
-    background-color: #DFF6E4;
-    display: flex;
-    align-items: center;
+@media (max-width: 768px) {
+  .homepage {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .upper-part h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+  }
+
+  .upper-quote p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+  .bottom-part h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 5rem;
+  }
+
+  .bottom-part{
+    height: 100%;
     justify-content: center;
+  }
+
+
+
+  .bottom-bg {
+    padding: 1rem;
+    background-size: cover;
+    border-radius: 20px 20px 0 0;
+    height: 100%;
+  }
+
+  .description-bg {
+    flex-direction: column;
+    text-align: center;
+    padding: 0.5rem;
+  }
+
+  .explore-more {
+    margin-top: 1rem;
+    justify-content: center;
+  }
+
+  .quote-card {
+    max-width: 95%;
+    margin-bottom: 1rem;
+  }
 }
 
-.explore-more button{
-    background-color: #FFA726;
-    border: none;
-    padding: 12px 24px;
-    font-size: 18px;
-    font-weight: 600;
-    cursor: pointer;
-    border-radius: 20px;
-    transition: background-color 0.3s;
-}
 
-.explore-more a{
-    color: rgb(6, 6, 6);
-    text-decoration: none;
-}
 
-.explore-more button:hover{
-    background-color: #6FCF97;
-    color: #FAFAF5;
-}
 
 
 .services{
@@ -244,6 +378,8 @@ body{
     color: #6FCF97;
     padding-bottom: 2rem;
 }
+
+
 
 
 .serv-topic{
@@ -1066,26 +1202,13 @@ footer .subscription button[type="submit"]:hover {
     padding: 1rem;
   }
   
-  .quote-card {
-    max-width: 95%;
-    padding: 1.5rem;
-    min-height: 120px;
-  }
+
   
   .quote {
     font-size: 1rem;
     padding: 1rem;
   }
-  
-  .explore-more {
-    height: 30vh;
-    padding: 1.5rem 1rem;
-  }
-  
-  .explore-more button {
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-  }
+
   
   /* Services section improvements */
   .services {
@@ -1334,3 +1457,7 @@ html, body {
     background-attachment: scroll !important;
   }
 }
+
+
+
+
