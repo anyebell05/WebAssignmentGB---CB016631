@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./c_generator.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="frontpage">
+        <header>
+            <nav class="navbar">
+                <div class="logo"><img src="./pics/logo1.png" alt="GreenBite Logo"></div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="./index.html" class="navbar1">Home</a></li>
+                    <li><a href="./recipes.html">Recipes</a></li>
+                    <li><a href="./c_generator.html">Calorie Generator</a></li>
+                    <li><a href="./work_gen.html">Workout Generator</a></li>
+                    <li><a href="./mindfulness.html">Mindfulness</a></li>
+                    <li><a href="./contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="frontpage">
+
+                <section class="header-top">
+                    <section class="topic">
+                        <h2>Fuel Your Body, Reach Your Goals</h2>
+                    </section>
+                    <hr class="divider">
+                    <section class="bio">
+                        <p>Understanding your body’s energy needs is the first step toward fitness success. Our BMR • TDEE • Macro Calculator helps you discover how many calories you burn each day and breaks it down into carbs, protein, and fats—tailored to your lifestyle. Whether you want to build muscle, lose fat, or maintain balance, you’ll get clear, science-backed guidance in just seconds.</p>
+                    </section>
+                </section>
+
+
+                <section class="calculator">
+                    <section class="left">
+                        <div class="stats">
+                            <div class="stat">
+                                <h2>95%</h2>
+                                <p>People feel more energized after eating a balanced breakfast</p>
+                            </div>
+                            <div class="stat">
+                                <h2>8</h2>
+                                <p>Glasses of water recommended daily</p>
+                            </div>
+                            <div class="stat">
+                                <h2>150</h2>
+                                <p>Minutes of weekly exercise keeps your body healthy</p>
+                            </div>
+                        </div>
+
+                        <div class="space-in"></div>
+
+                        <div class="stats1">
+                            <div class="stat">
+                                <h2>2000+</h2>
+                                <p>Steps per day recommended for a healthy lifestyle</p>
+                            </div>
+                            <div class="stat">
+                                <h2>7-9</h2>
+                                <p>Hours of sleep needed daily for optimal body function</p>
+                            </div>
+                            <div class="stat">
+                                <h2>400g</h2>
+                                <p>Minimum daily intake of fruits and vegetables for adults</p>
+                            </div>
+                        </div>
+
+                    </section>
+                    <section class="right">
+                        <div class="container">
+                            <h2>Fitness Calculator</h2>
+                            <form id="calcForm">
+                                <label>Age (years)</label>
+                                <input type="number" id="age" required>
+
+                                <label>Gender</label>
+                                <select id="gender" required>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+
+                                <label>Height (cm)</label>
+                                <input type="number" id="height" required>
+
+                                <label>Weight (kg)</label>
+                                <input type="number" id="weight" required>
+
+                                <label>Activity Level</label>
+                                <select id="activity" required>
+                                    <option value="1.2">Sedentary (little/no exercise)</option>
+                                    <option value="1.375">Lightly active (1–3 days/week)</option>
+                                    <option value="1.55">Moderately active (3–5 days/week)</option>
+                                    <option value="1.725">Very active (6–7 days/week)</option>
+                                    <option value="1.9">Super active (physical job)</option>
+                                </select>
+
+                                <button type="submit">Calculate</button>
+                            </form>
+
+                            <div class="results" id="results">
+                                <div class="result-item">
+                                    <span class="counter">BMR: <span id="bmrVal">0</span> kcal</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="counter">TDEE: <span id="tdeeVal">0</span> kcal</span>
+                                </div>
+
+                                <div class="result-item">
+                                    <span>Carbs: <span id="carbsVal">0</span> g</span>
+                                    <div class="progress"><div class="progress-bar carbs" id="carbsBar"></div></div>
+                                </div>
+                                <div class="result-item">
+                                    <span>Protein: <span id="proteinVal">0</span> g</span>
+                                    <div class="progress"><div class="progress-bar protein" id="proteinBar"></div></div>
+                                </div>
+                                <div class="result-item">
+                                    <span>Fat: <span id="fatVal">0</span> g</span>
+                                    <div class="progress"><div class="progress-bar fat" id="fatBar"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </section>  
+                
+                <section class="space">
+
+                </section>
+
+
+        <footer>
+            <section class="footer-content">
+                <section class="footer-heading">
+                    <h2>GreenBite</h2>
+                </section>
+                <section class="footer-para">
+                    <p>GreenBite is a wellness brand dedicated to helping you live healthier every 
+                        day through balanced meals, fitness inspiration, and mindful living. Join us 
+                        as we make healthy living simple, sustainable, and enjoyable.</p>
+                </section>
+            </section>
+            <section class="footer-content2">
+                <section class="subscription">
+                    <h2>Subscribe to our Newsletter</h2>
+                    <form action="#" method="post">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                    <p>Stay updated with the latest news and offers from GreenBite.</p>
+                </section>
+                <section class="footer-copy">
+                    <p>&copy; 2025 GreenBite. All rights reserved.</p>
+                </section>
+            </section>
+            <section class="footer-content3">
+                <section class="footer-socials">
+                    <section class="social-header">
+                        <h2>Follow us on Social Media</h2>
+                    </section>
+                    <section class="social-names">
+                        <section class="names">
+                            <a href="#">Facebook</a>
+                            <a href="#">Instagram</a>
+                            <a href="#">Twitter</a>
+                            <a href="#">YouTube</a>
+                        </section>
+                        <section class="socials">
+                           <img src="./pics/social media icons/facebook.png" alt="">
+                           <img src="./pics/social media icons/instagram.png" alt="">
+                           <img src="./pics/social media icons/twitter.png" alt="">
+                           <img src="./pics/social media icons/youtube.png" alt="">
+                        </section>
+                    </section>
+                </section>
+            </section>
+
+        </footer>
+            </section>
+        </main>
+    </div>
+
+
+
+
+
+
+
+
+
+<script>
+    let lastScrollTop = 0;
+    const navbar = document.querySelector('.navbar');
+
+    window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop) {
+            navbar.classList.add('navbar-hide');
+        } else {
+            navbar.classList.remove('navbar-hide');
+        }
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
+    });
+</script>
+
+
+
+  <script>
+    document.getElementById("calcForm").addEventListener("submit", function(e){
+      e.preventDefault();
+
+      let age = parseInt(document.getElementById("age").value);
+      let gender = document.getElementById("gender").value;
+      let height = parseFloat(document.getElementById("height").value);
+      let weight = parseFloat(document.getElementById("weight").value);
+      let activity = parseFloat(document.getElementById("activity").value);
+
+      // BMR calculation
+      let bmr = 0;
+      if(gender === "male"){
+        bmr = 10*weight + 6.25*height - 5*age + 5;
+      } else {
+        bmr = 10*weight + 6.25*height - 5*age - 161;
+      }
+
+      // TDEE calculation
+      let tdee = bmr * activity;
+
+      // Macros
+      let carbs = (tdee * 0.50) / 4;
+      let protein = (tdee * 0.20) / 4;
+      let fat = (tdee * 0.30) / 9;
+
+      // Display results
+      document.getElementById("results").style.display = "block";
+
+      animateCounter("bmrVal", Math.round(bmr));
+      animateCounter("tdeeVal", Math.round(tdee));
+      animateCounter("carbsVal", Math.round(carbs));
+      animateCounter("proteinVal", Math.round(protein));
+      animateCounter("fatVal", Math.round(fat));
+
+      // Progress bars (relative to max macro)
+      let maxMacro = Math.max(carbs, protein, fat);
+      document.getElementById("carbsBar").style.width = (carbs/maxMacro*100)+"%";
+      document.getElementById("proteinBar").style.width = (protein/maxMacro*100)+"%";
+      document.getElementById("fatBar").style.width = (fat/maxMacro*100)+"%";
+    });
+
+    function animateCounter(id, endValue){
+      let el = document.getElementById(id);
+      let start = 0;
+      let duration = 800;
+      let stepTime = Math.abs(Math.floor(duration / endValue));
+      let timer = setInterval(function(){
+        start++;
+        el.textContent = start;
+        if(start >= endValue) clearInterval(timer);
+      }, stepTime);
+    }
+  </script>
+
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-links");
+
+  hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+      hamburger.classList.toggle("active");
+  });
+</script>
+</body>
+</html>

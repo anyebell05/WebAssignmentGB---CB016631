@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./mindfulness.css">
+    <title>Mindfulness</title>
+</head>
+<body>
+    <section class="frontpage">
+        <header>
+            <nav class="navbar">
+                <div class="logo"><img src="./pics/logo1.png" alt="GreenBite Logo"></div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="./index.html" class="navbar1">Home</a></li>
+                    <li><a href="./recipes.html">Recipes</a></li>
+                    <li><a href="./c_generator.html">Calorie Generator</a></li>
+                    <li><a href="./work_gen.html">Workout Generator</a></li>
+                    <li><a href="./mindfulness.html">Mindfulness</a></li>
+                    <li><a href="./contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+                <section class="header-top">
+                    <section class="topic">
+                        <h2>Calm Mind, Clear Thoughts, Balanced Life</h2>
+                    </section>
+                    <hr class="divider">
+                    <section class="bio">
+                        <p>Discover the power of being present. Mindfulness helps you slow down, reduce stress, and connect with your inner self. By practicing simple breathing exercises, meditation, and focused awareness, you can cultivate clarity, emotional balance, and a deeper sense of calm in your daily life.</p>
+                    </section>
+                </section>
+
+                <section class="mindfulness-section">
+                    <div class="mindfulness-box" style="background-image: url('./pics/mind/3.jpg')">
+                        <p>Relax and focus with guided breathing exercises.</p>
+                    </div>
+                    <div class="mindfulness-box" style="background-image: url('./pics/mind/4.jpg');">
+                        <p>Enhance your meditation with calming ambient sounds.</p>
+                    </div>
+                </section>
+
+                <section class="breathing">
+                    <section class="breathing-topics">
+                        <h2>Breathing Techniques</h2>
+                        <p>Explore various techniques to enhance your breathing practice and promote relaxation.</p>
+                        <div class="breathing-cards">
+                            <div class="breathing-card">
+                                <h3>4-7-8 Breathing</h3>
+                                <p>Inhale for 4 seconds, hold for 7, and exhale for 8. A great method to calm the mind before sleep.</p>
+                            </div>
+                            <div class="breathing-card">
+                                <h3>Box Breathing</h3>
+                                <p>Breathe in for 4, hold for 4, exhale for 4, and hold again for 4. Ideal for stress relief and focus.</p>
+                            </div>
+                            <div class="breathing-card">
+                                <h3>Diaphragmatic Breathing</h3>
+                                <p>Focus on deep belly breaths to increase oxygen flow, reduce stress, and improve relaxation.</p>
+                            </div>
+                        </div>
+
+                    </section>
+
+                    <section class="breathing-animation">
+                        <section class="breathing-section">
+                            <div class="circle"></div>
+                            <p id="breath-text">Inhale</p>
+                        </section>
+                    </section>
+                </section>
+                
+
+                <section class="timer">
+                    <section class="timer-section">
+                        <h2>Meditation Timer</h2>
+                        <div class="paralel">
+                            <input type="number" id="timerMinutes" placeholder="Minutes" min="1">
+                            <button id="startTimerBtn">Start</button>
+                        </div>
+                        <p id="timerDisplay">00:00</p>
+                    </section>
+                    <section class="timer-completed">
+                        <section class="sessions-section">
+                            <h2>Completed Sessions</h2>
+                            <p id="sessionCount">0</p>
+                        </section>
+                    </section>
+                </section>
+
+                <section class="ambient">
+                    <section class="ambient-topic">
+                        <h2>Relax with Ambient Sounds</h2>
+                        <p>Choose from soothing nature sounds to create a calming environment for your meditation and mindfulness practice.</p>
+                    </section>
+                    <section class="ambient-box">
+                        <section class="ambient-cards">
+                            <img src="./pics/mind/ambient/1.jpg" alt="Rain Sound">
+                            <h3>Rain</h3>
+                            <p>Relax with the gentle sound of rainfall to reduce stress and calm your mind.</p>
+                            <button onclick="toggleSound('rain')">Click Here</button>
+                        </section>
+                        <section class="ambient-cards">
+                            <img src="./pics/mind/ambient/2.jpg" alt="Ocean Waves">
+                            <h3>Ocean Waves</h3>
+                            <p>Immerse yourself in soothing ocean waves to enhance focus and mindfulness.</p>
+                            <button onclick="toggleSound('ocean')">Click Here</button>
+                        </section>
+                        <section class="ambient-cards">
+                            <img src="./pics/mind/ambient/3.jpg" alt="Forest Sounds">
+                            <h3>Forest Sounds</h3>
+                            <p>Experience the calming effects of a forest with birds chirping and leaves rustling.</p>
+                            <button onclick="toggleSound('forest')">Click Here</button>
+                        </section>
+
+                    </section>
+                </section>
+
+
+
+
+        <footer>
+            <section class="footer-content">
+                <section class="footer-heading">
+                    <h2>GreenBite</h2>
+                </section>
+                <section class="footer-para">
+                    <p>GreenBite is a wellness brand dedicated to helping you live healthier every 
+                        day through balanced meals, fitness inspiration, and mindful living. Join us 
+                        as we make healthy living simple, sustainable, and enjoyable.</p>
+                </section>
+            </section>
+            <section class="footer-content2">
+                <section class="subscription">
+                    <h2>Subscribe to our Newsletter</h2>
+                    <form action="#" method="post">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                    <p>Stay updated with the latest news and offers from GreenBite.</p>
+                </section>
+                <section class="footer-copy">
+                    <p>&copy; 2025 GreenBite. All rights reserved.</p>
+                </section>
+            </section>
+            <section class="footer-content3">
+                <section class="footer-socials">
+                    <section class="social-header">
+                        <h2>Follow us on Social Media</h2>
+                    </section>
+                    <section class="social-names">
+                        <section class="names">
+                            <a href="#">Facebook</a>
+                            <a href="#">Instagram</a>
+                            <a href="#">Twitter</a>
+                            <a href="#">YouTube</a>
+                        </section>
+                        <section class="socials">
+                           <img src="./pics/social media icons/facebook.png" alt="">
+                           <img src="./pics/social media icons/instagram.png" alt="">
+                           <img src="./pics/social media icons/twitter.png" alt="">
+                           <img src="./pics/social media icons/youtube.png" alt="">
+                        </section>
+                    </section>
+                </section>
+            </section>
+
+        </footer>
+        </main>
+    </section>
+
+
+    <script>
+                let lastScrollTop = 0;
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+        navbar.classList.add('navbar-hide');
+    } else {
+        navbar.classList.remove('navbar-hide');
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
+});
+
+
+
+
+
+// Breathing Text Animation
+const breathText = document.getElementById("breath-text");
+let breatheState = true; // true = inhale, false = exhale
+setInterval(() => {
+  breatheState = !breatheState;
+  breathText.textContent = breatheState ? "Inhale" : "Exhale";
+}, 3000);
+
+// Timer Tool
+const timerDisplay = document.getElementById("timerDisplay");
+const startTimerBtn = document.getElementById("startTimerBtn");
+let timerInterval;
+let timerSeconds = 0;
+
+startTimerBtn.addEventListener("click", () => {
+  const minutes = parseInt(document.getElementById("timerMinutes").value);
+  if (isNaN(minutes) || minutes <= 0) return alert("Enter valid minutes");
+  timerSeconds = minutes * 60;
+  clearInterval(timerInterval);
+  timerInterval = setInterval(runTimer, 1000);
+});
+
+function runTimer() {
+  if (timerSeconds <= 0) {
+    clearInterval(timerInterval);
+    incrementSessions();
+    return;
+  }
+  const m = Math.floor(timerSeconds / 60);
+  const s = timerSeconds % 60;
+  timerDisplay.textContent = `${m < 10 ? "0" + m : m}:${s < 10 ? "0" + s : s}`;
+  timerSeconds--;
+}
+
+// Ambient Sounds
+const sounds = {
+  rain: new Audio("./sounds/1.mp3"),
+  ocean: new Audio("./sounds/2.mp3"),
+  forest: new Audio("./sounds/3.mp3")
+};
+
+function toggleSound(name) {
+  const sound = sounds[name];
+  if (!sound) return;
+  if (sound.paused) sound.play();
+  else sound.pause();
+}
+
+// Session Tracking with localStorage
+function incrementSessions() {
+  let sessions = parseInt(localStorage.getItem("sessions") || "0");
+  sessions++;
+  localStorage.setItem("sessions", sessions);
+  document.getElementById("sessionCount").textContent = sessions;
+}
+
+// Load sessions on page load
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("sessionCount").textContent = localStorage.getItem("sessions") || "0";
+});
+
+    </script>
+
+    <script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-links");
+
+  hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+      hamburger.classList.toggle("active");
+  });
+</script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+  
+
+

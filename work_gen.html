@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./work_gen.css">
+    <title>Workout Generator</title>
+</head>
+<body>
+    <section class="frontpage">
+        <header>
+            <nav class="navbar">
+                <div class="logo"><img src="./pics/logo1.png" alt="GreenBite Logo"></div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="./index.html" class="navbar1">Home</a></li>
+                    <li><a href="./recipes.html">Recipes</a></li>
+                    <li><a href="./c_generator.html">Calorie Generator</a></li>
+                    <li><a href="./work_gen.html">Workout Generator</a></li>
+                    <li><a href="./mindfulness.html">Mindfulness</a></li>
+                    <li><a href="./contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+                <section class="header-top">
+                    <section class="topic">
+                        <h2>Stronger Every Day, One Rep at a Time</h2>
+                    </section>
+                    <hr class="divider">
+                    <section class="bio">
+                        <p>Take the guesswork out of fitness! Our Workout Generator creates personalized routines based on your preferences, helping you stay consistent, motivated, and on track with your goals. Whether you’re training at home or the gym, we’ve got a plan to keep you moving and progressing every day.</p>
+                    </section>
+                </section>
+
+                <section class="facts-header">
+                    <h2>Quick Quirks & Tips</h2>
+                    <p>Boost your workouts with these essential fitness insights.</p>
+                </section>
+
+                <section class="facts">
+                    <section class="fact-card">
+                        <img src="./pics/workout/1.jpg" alt="Strength Training" class="fact-img">
+                        <h3>Strength Training</h3>
+                        <p>Strength training builds muscle, strengthens bones, and boosts metabolism, helping your body stay powerful and resilient.</p>
+                    </section>
+                    <section class="fact-card">
+                        <img src="./pics/workout/2.jpg" alt="Cardio" class="fact-img">
+                        <h3>Cardio</h3>
+                        <p>Cardio improves heart and lung health, burns calories, and increases overall endurance for daily activities and workouts.</p>
+                    </section>
+                    <section class="fact-card">
+                        <img src="./pics/workout/3.jpg" alt="Flexibility" class="fact-img"> 
+                        <h3>Flexibility</h3>
+                        <p>Flexibility exercises improve mobility, reduce stiffness, and lower the risk of injuries by keeping your joints and muscles healthy.</p>
+                    </section>
+                    <section class="fact-card">
+                        <img src="./pics/workout/4.jpg" alt="Endurance" class="fact-img">
+                        <h3>Endurance</h3>
+                        <p>Endurance training builds stamina, allowing you to sustain physical effort longer and perform at your best over time.</p>
+                    </section>
+                </section>
+
+                <section class="workout-gen">
+                    <section class="workout-form">
+                        <h2>Select Your Workout</h2>
+                        <form id="workoutForm">
+                            <label for="bodyPart">Body Part:</label>
+                            <select id="bodyPart">
+                            <option value="arms">Arms</option>
+                            <option value="legs">Legs</option>
+                            <option value="full">Full Body</option>
+                            <option value="core">Core</option>
+                            </select>
+
+                            <label for="equipment">Equipment:</label>
+                            <select id="equipment">
+                            <option value="none">None</option>
+                            <option value="dumbbells">Dumbbells</option>
+                            <option value="bands">Resistance Bands</option>
+                            </select>
+
+                            <button type="button" onclick="generateWorkout()">Generate Workout</button>
+                        </form>
+                    </section>
+
+                    <section class="workout-results">
+                        <h2>Your Workout Plan</h2>
+                        <div id="workoutPlan" class="workout-cards"></div>
+                    </section>
+                </section>
+
+
+        <footer>
+            <section class="footer-content">
+                <section class="footer-heading">
+                    <h2>GreenBite</h2>
+                </section>
+                <section class="footer-para">
+                    <p>GreenBite is a wellness brand dedicated to helping you live healthier every 
+                        day through balanced meals, fitness inspiration, and mindful living. Join us 
+                        as we make healthy living simple, sustainable, and enjoyable.</p>
+                </section>
+            </section>
+            <section class="footer-content2">
+                <section class="subscription">
+                    <h2>Subscribe to our Newsletter</h2>
+                    <form action="#" method="post">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                    <p>Stay updated with the latest news and offers from GreenBite.</p>
+                </section>
+                <section class="footer-copy">
+                    <p>&copy; 2025 GreenBite. All rights reserved.</p>
+                </section>
+            </section>
+            <section class="footer-content3">
+                <section class="footer-socials">
+                    <section class="social-header">
+                        <h2>Follow us on Social Media</h2>
+                    </section>
+                    <section class="social-names">
+                        <section class="names">
+                            <a href="#">Facebook</a>
+                            <a href="#">Instagram</a>
+                            <a href="#">Twitter</a>
+                            <a href="#">YouTube</a>
+                        </section>
+                        <section class="socials">
+                           <img src="./pics/social media icons/facebook.png" alt="">
+                           <img src="./pics/social media icons/instagram.png" alt="">
+                           <img src="./pics/social media icons/twitter.png" alt="">
+                           <img src="./pics/social media icons/youtube.png" alt="">
+                        </section>
+                    </section>
+                </section>
+            </section>
+
+        </footer>
+                
+        </main>
+    </section>
+
+
+
+    <script>
+        let lastScrollTop = 0;
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+        navbar.classList.add('navbar-hide');
+    } else {
+        navbar.classList.remove('navbar-hide');
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
+});
+
+
+
+
+
+
+const workouts = {
+  arms: { none:["Push-ups","Tricep Dips","Plank Shoulder Taps"], dumbbells:["Bicep Curls","Overhead Press","Lateral Raises"], bands:["Band Curls","Band Tricep Extensions","Band Pull Aparts"] },
+  legs: { none:["Squats","Lunges","Calf Raises"], dumbbells:["Goblet Squats","Deadlifts","Step-ups"], bands:["Band Squats","Band Side Steps","Glute Bridges"] },
+  full: { none:["Burpees","Mountain Climbers","Jump Squats"], dumbbells:["Thrusters","Renegade Rows","Deadlift + Press"], bands:["Band Burpees","Band Rows","Band Thrusters"] },
+  core: { none:["Sit-ups","Russian Twists","Leg Raises"], dumbbells:["Weighted Sit-ups","Russian Twists w/ Dumbbell","Dumbbell Side Bends"], bands:["Band Crunches","Band Side Pulls","Band Bicycle Kicks"] }
+};
+
+let workoutQueue = [];
+let timerInterval;
+let currentIndex = 0;
+let timeLeft = 30;
+
+function generateWorkout() {
+  const bodyPart = document.getElementById("bodyPart").value;
+  const equipment = document.getElementById("equipment").value;
+  const selectedWorkouts = [...workouts[bodyPart][equipment]];
+  workoutQueue = selectedWorkouts.sort(() => 0.5 - Math.random()).slice(0, Math.floor(Math.random() * 2) + 3);
+
+  const planContainer = document.getElementById("workoutPlan");
+  planContainer.innerHTML = "";
+
+  workoutQueue.forEach((exercise, index) => {
+    const card = document.createElement("div");
+    card.classList.add("exercise-card");
+
+    card.innerHTML = `
+      <div class="exercise-info">
+        <div class="card1">
+            <h3>${exercise}</h3>
+            <p class="timer" id="timer-${index}">00:30</p>
+        </div>
+        <div class="card2">
+            <h3>12 X 3</h3>
+            <p>Intermediate</p>
+        </div>
+      </div>
+    `;
+    
+
+    planContainer.appendChild(card);
+  });
+
+  currentIndex = 0;
+  startTimer(currentIndex);
+}
+
+function startTimer(index) {
+  if(index >= workoutQueue.length) return;
+  clearInterval(timerInterval);
+  timeLeft = 30;
+
+  const timerElement = document.getElementById(`timer-${index}`);
+  timerElement.textContent = formatTime(timeLeft);
+
+  timerInterval = setInterval(() => {
+    timeLeft--;
+    timerElement.textContent = formatTime(timeLeft);
+
+    if(timeLeft <= 0){
+      clearInterval(timerInterval);
+      new Audio("https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg").play();
+      startTimer(index+1);
+    }
+  },1000);
+}
+
+function formatTime(seconds) {
+  return `00:${seconds < 10 ? "0"+seconds : seconds}`;
+}
+
+
+
+
+
+
+    </script>
+
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-links");
+
+  hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+      hamburger.classList.toggle("active");
+  });
+</script>
+</body>
+</html>

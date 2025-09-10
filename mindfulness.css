@@ -1,0 +1,1286 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+body{
+    color: #333333;
+    height: 200vh;
+}
+
+
+
+
+.navbar {
+    background-color: #FAFAF5;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    transition: transform 0.5s ease; 
+    z-index: 1000;
+}
+
+
+.navbar .logo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #6FCF97;
+    font-size: 1.5rem;
+}
+
+.logo img{
+  width: 12%;
+  height: 12%;
+}
+
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333333;
+    font-weight: 600;
+    transition: 0.3s;
+    position: relative;
+    text-decoration: none;
+}
+
+
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;        
+  width: 100%;
+  height: 2px;         
+  background: #FFA726;    
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.navbar a:hover::after {
+  transform: scaleX(1);
+}
+
+.navbar a:hover {
+    color: #6FCF97;
+}
+
+.navbar-hide {
+    transform: translateY(-100%);
+    transition: transform 0.5s ease;
+}
+
+
+
+.frontpage{
+    height: auto;
+    background-color: #FAFAF5;
+
+}
+
+.header-top {
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+}
+
+.topic {
+    flex: 2.8;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: #FAFAF5;
+    display: flex;
+    justify-content: center;
+}
+
+.topic h2{
+    color: #2f2f2f;
+    text-align: center;
+    margin-top: auto;
+    font-size: 3rem;
+}
+
+
+ .divider {
+    align-self: center;
+    justify-self: center;
+    width: 80%;
+    border: none;
+    height: 3px;
+    background: linear-gradient(to right, #4CAF50, #81C784, #4CAF50);
+    border-radius: 5px;
+    margin: 1rem 0 0rem 0;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+.bio {
+    flex: 2;
+    background-color: #FAFAF5;
+    padding: 3rem;
+    display: flex;
+    color: #555;
+}
+
+.bio p {
+    margin: 0;
+    line-height: 1.5;
+    text-align: center;
+    color: #1c1c1c;
+    font-size: 20px;
+
+}
+
+
+
+
+.mindfulness-section {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 3rem 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.mindfulness-box {
+  position: relative;
+  flex: 1 1 45%;
+  height: 350px;
+  background-size: 88%; 
+  background-position: center;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+  transition: 0.5s;
+}
+
+.mindfulness-box:hover {
+    color: #6FCF97;
+    background-size: 110%; 
+    border: 4px solid rgba(111, 207, 151, 0.8);
+}
+
+.mindfulness-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); 
+  z-index: 1;
+}
+
+.mindfulness-box p {
+  position: relative;
+  z-index: 2;
+  padding: 1rem;
+}
+
+
+
+.breathing{
+    margin-top: 2rem;
+    height: auto;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333333;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.breathing-topics{
+    flex: 1;
+    background-color: #f4f4f4;
+    height: 100%;
+}
+
+.breathing-topics h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2f2f2f;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.breathing-topics h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #34d399, #6FCF97);
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+.breathing-topics p {
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto 1.5rem auto;
+  line-height: 1.6;
+}
+
+.breathing-animation{
+    flex: 1;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100%;
+}
+
+.breathing-section {
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle {
+  width: 11rem;
+  height: 11rem;
+  background: radial-gradient(circle, #4facfe 0%, #00f2fe 100%);
+  border-radius: 50%;
+  animation: breathe 6s infinite ease-in-out, glow 3s infinite alternate;
+  margin-bottom: 3rem;
+  box-shadow: 0 0 20px rgba(79, 172, 254, 0.6);
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.5); }
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 10px rgba(79, 172, 254, 0.5); }
+  to { box-shadow: 0 0 25px rgba(0, 242, 254, 0.9); }
+}
+
+#breath-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.breathing-cards {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.breathing-card {
+  background: #f4fdf8;
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 280px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.breathing-card h3 {
+  color: #34d399;
+  margin-bottom: 0.8rem;
+}
+
+.breathing-card p {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+.breathing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.timer {
+  position: relative;
+  height: auto;
+  background: url(./pics/mind/7.jpg) center/cover no-repeat;
+  background-attachment: fixed;
+  padding: 5rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  overflow: hidden;
+  background-color: #f4f4f4;
+
+}
+
+.timer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.45); 
+  z-index: 1;
+}
+
+.timer * {
+  position: relative;
+  z-index: 2; 
+}
+
+.timer-section{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.timer-section h2{
+
+    font-size: 2.2rem;
+    color: #6FCF97;
+}
+
+.timer-section input {
+  width: 15rem;
+  padding: .7rem;
+  margin-right: 0.5rem;
+  border-radius: 7px;
+  border: none;
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+  text-align: center;
+
+}
+
+.timer-section button {
+  padding: 0.8rem 1.2rem;
+  background: #6FCF97;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.timer-section button:hover {
+  background: #34d399;
+}
+
+#timerDisplay {
+  margin-top: 0em;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.timer-completed {
+    flex: 1;
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+
+.sessions-section p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #f97316;
+}
+
+
+.ambient{
+    display: flex;
+    height: auto;
+    flex-direction: column;
+
+}
+
+.ambient-topic{
+    flex: 1;
+    background-color: #f4f4f4;
+}
+
+.ambient-topic h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #6FCF97;
+    margin-bottom: 0.5rem;
+    margin-top: 2rem;
+}
+
+.ambient-topic p {
+    text-align: center;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.ambient-box{
+    flex: 5;
+    background-color: #f4f4f4;
+}
+
+
+.ambient-box{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.ambient-cards{
+    background-color: #fff8f0; /* warm white color */
+    margin: 2rem;
+    flex: 1;
+    width: 80%;
+    padding: 1rem ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* subtle floating shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ambient-cards:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2); /* stronger shadow on hover */
+}
+
+.ambient-cards h3{
+    color: #6FCF97;
+    margin-bottom: 1rem;
+}
+
+.ambient-cards p{
+    color: rgb(0, 0, 0);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.ambient-cards img{
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 15px;
+}
+
+
+.ambient-cards button {
+  margin: 0.5rem;
+  padding: 0.7rem 2.5rem;
+  border-radius: 6px;
+  border: none;
+  background: #34d399;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.ambient-box button:hover {
+    background: #28b27c;
+    transform: scale(1.05);
+}
+
+
+
+
+
+
+
+
+footer {
+    background-color: #2d545e;
+    height: auto;
+    color: #fafafa;
+    text-align: center;
+    padding: 1rem 0;
+    z-index: 2;
+    position: static; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    flex-shrink: 0;
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 1.5fr;
+    gap: 0.5rem;
+}
+
+.footer-content {
+    padding: 1rem;
+    background-color: #2d545e;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.footer-heading {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    width: 100%;
+    font-size: 26px;
+    color: #6FCF97;
+}
+
+.footer-para {
+    background-color: #2d545e;
+    display: flex;
+    justify-content: flex-start;
+    text-align: start;
+    padding-top: 1rem;
+    gap: 1rem;
+    width: 100%;
+}
+
+.footer-content2 {
+    padding: 1rem;
+    background-color: #2d545e;
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+}
+
+.subscription{
+    padding: 0rem 1rem 2rem 1rem;
+    background-color: #2d545e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.subscription h2 {
+    font-size: 28px;
+    color: #6FCF97;
+    margin-bottom: 1rem;
+}
+
+.subscription p {
+    font-size: 16px;
+    color: #fafafa;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+footer .subscription input[type="email"] {
+    width: 80%;
+    max-width: 320px;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid #6FCF97;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: #222831;
+    color: #fafafa;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(111, 207, 151, 0.08);
+}
+
+footer .subscription input[type="email"]:focus {
+    border-color: #FFA726;
+    box-shadow: 0 0 0 2px #FFA72644;
+    background: #181e24;
+    color: #fff;
+}
+
+
+footer .subscription button[type="submit"] {
+    width: 80%;
+    max-width: 320px;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: linear-gradient(90deg, #6FCF97 0%, #95ffce 50%, #6FCF97 100%);
+    color: #181e24;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 8px rgba(111, 207, 151, 0.10);
+    margin-bottom: 0.5rem;
+}
+
+footer .subscription button[type="submit"]:hover {
+    background: linear-gradient(90deg, #636363 0%, #636363 50%, #636363 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 16px rgba(255, 167, 38, 0.18);
+}
+
+
+.footer-links{
+    background-color: #2d545e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-links a{
+    color: #fafafa;
+    text-decoration: none;
+    margin: 0.5rem 0;
+}
+
+.footer-copy{
+    padding: 1rem 1rem 0 1rem;
+    background-color: #2d545e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+}
+
+
+
+.footer-content3 {
+    padding: 1rem;
+    background-color: #2d545e;
+    display: grid;
+}
+
+
+.footer-socials {
+    background-color: #2d545e;
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+}
+
+.social-header {
+    display: flex;
+    font-size: 18px;
+    color: #fafafa;
+    background-color: #2d545e;
+}
+
+.social-header h2 {
+    color: #6FCF97;
+    margin-left: 1rem;
+    font-size: 28px;
+}
+
+.social-names{
+    display: flex;
+    background-color: #2d545e;
+    width: 100%;
+    height: 100%;
+}
+
+.names{
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    background-color: #2d545e;
+    justify-content: space-evenly;
+}
+
+.names a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0.5rem 0;
+    padding-left: 4rem;
+}
+
+.names a:hover {
+    color: #6FCF97;
+    transition: 0.5s;
+}
+
+
+.socials{
+    flex: 1;
+    background-color: #2d545e;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.socials img {
+    width: 30px;
+    height: 30px;
+    align-self: flex-start;
+}
+
+
+
+
+
+
+
+
+
+/* ---------------- */
+/* Mobile Navbar */
+/* ---------------- */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Animate hamburger to "X" */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile menu hidden by default */
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background: #FAFAF5;
+        flex-direction: column;
+        width: 200px;
+        height: 0;
+        overflow: hidden;
+        padding: 0;
+        gap: 0;
+        transition: height 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        border-radius: 0 0 10px 10px;
+    }
+
+    .nav-links.open {
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .nav-links li {
+        margin: 2px 0;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+        color: #333;
+    }
+
+    .navbar ul{
+      gap: 0;
+    }
+}
+
+
+
+
+
+
+
+/* ===== MOBILE OPTIMIZATION FOR MINDFULNESS PAGE ===== */
+
+/* Base mobile improvements */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    overflow-x: hidden;
+    height: auto;
+  }
+  
+  /* Improve navbar for mobile */
+  .navbar {
+    padding: 0.8rem 1rem;
+  }
+  
+  .navbar .logo {
+    font-size: 1.2rem;
+  }
+  
+  /* Header improvements */
+  .header-top {
+    height: auto;
+    padding-top: 70px;
+  }
+  
+  .topic {
+    flex: none;
+    padding: 1rem;
+  }
+  
+  .topic h2 {
+    font-size: 1.8rem;
+    margin-top: 1rem;
+  }
+  
+  .divider {
+    width: 90%;
+    margin: 0.5rem 0;
+  }
+  
+  .bio {
+    flex: none;
+    padding: 1.5rem;
+  }
+  
+  .bio p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  /* Mindfulness section improvements */
+  .mindfulness-section {
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+  }
+  
+  .mindfulness-box {
+    flex: 1 1 100%;
+    height: 250px;
+    font-size: 1rem;
+  }
+  
+  .mindfulness-box:hover {
+    background-size: 100%;
+    border-width: 2px;
+  }
+  
+  /* Breathing section improvements */
+  .breathing {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .breathing-topics h2 {
+    font-size: 1.5rem;
+  }
+  
+  .breathing-topics p {
+    font-size: 0.9rem;
+    padding: 0 1rem;
+  }
+  
+  .circle {
+    width: 8rem;
+    height: 8rem;
+    margin-bottom: 2rem;
+  }
+  
+  #breath-text {
+    font-size: 1rem;
+  }
+  
+  .breathing-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .breathing-card {
+    max-width: 90%;
+    padding: 1.2rem;
+  }
+  
+  /* Timer section improvements */
+  .timer {
+    padding: 2rem 1rem;
+    background-attachment: scroll !important;
+    flex-direction: column;
+  }
+  
+  .timer-section h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  .timer-section input {
+    width: 80%;
+    max-width: 250px;
+    margin: 1.5rem auto 1rem;
+  }
+  
+  .timer-section button {
+    margin-bottom: 1rem;
+  }
+  
+  #timerDisplay {
+    font-size: 1.2rem;
+  }
+  
+  .sessions-section p {
+    font-size: 1rem;
+  }
+  
+  /* Ambient section improvements */
+  .ambient-topic h2 {
+    font-size: 1.5rem;
+  }
+  
+  .ambient-topic p {
+    font-size: 0.9rem;
+    padding: 0 1rem;
+  }
+  
+  .ambient-box {
+    flex-direction: column;
+  }
+  
+  .ambient-cards {
+    width: 90%;
+    margin: 1rem auto;
+    padding: 1rem;
+  }
+  
+  .ambient-cards h3 {
+    font-size: 1.1rem;
+  }
+  
+  .ambient-cards p {
+    font-size: 0.9rem;
+  }
+  
+  .ambient-cards button {
+    padding: 0.6rem 1.5rem;
+    margin: 0.3rem;
+  }
+  
+  /* Footer improvements */
+  footer {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 0;
+  }
+  
+  .footer-content, 
+  .footer-content2, 
+  .footer-content3 {
+    padding: 1rem 0.5rem;
+  }
+  
+  .footer-heading {
+    justify-content: center;
+    font-size: 1.2rem;
+  }
+  
+  .footer-para {
+    text-align: center;
+    padding-top: 0.5rem;
+    justify-content: center;
+  }
+  
+  .subscription {
+    padding: 0 0 1rem 0;
+  }
+  
+  .subscription h2 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  
+  footer .subscription input[type="email"],
+  footer .subscription button[type="submit"] {
+    width: 90%;
+    max-width: none;
+  }
+  
+  .social-header {
+    justify-content: center;
+  }
+  
+  .social-header h2 {
+    margin-left: 0;
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  
+  .social-names {
+    flex-direction: column;
+  }
+  
+  .names a {
+    padding-left: 0;
+    text-align: center;
+    margin: 0.3rem 0;
+  }
+  
+  .socials {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+  
+  .socials img {
+    align-self: center;
+    width: 25px;
+    height: 25px;
+  }
+  
+  /* Utility classes for mobile */
+  .mobile-hidden {
+    display: none !important;
+  }
+  
+  .mobile-text-center {
+    text-align: center;
+  }
+  
+  .mobile-p-1 {
+    padding: 1rem;
+  }
+}
+
+/* Very small devices */
+@media (max-width: 480px) {
+  .topic h2 {
+    font-size: 1.5rem;
+  }
+  
+  .mindfulness-box {
+    height: 200px;
+    font-size: 0.9rem;
+  }
+  
+  .breathing-topics h2 {
+    font-size: 1.3rem;
+  }
+  
+  .circle {
+    width: 6rem;
+    height: 6rem;
+  }
+  
+  .timer-section h2 {
+    font-size: 1.3rem;
+  }
+  
+  .timer-section input {
+    width: 90%;
+  }
+  
+  .ambient-topic h2 {
+    font-size: 1.3rem;
+  }
+  
+  /* Improve touch targets */
+  .navbar a, 
+  button, 
+  .footer-links a, 
+  .names a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .footer-content2 {
+    grid-template-rows: auto auto;
+  }
+  
+  .footer-copy {
+    padding: 1rem 0 0 0;
+  }
+}
+
+
+
+/* Improve performance on mobile */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Add hamburger menu icon for mobile */
+@media (max-width: 768px) {
+  
+  .navbar ul {
+    display: none;
+  }
+  
+  .navbar .hamburger {
+    display: flex;
+  }
+  
+  .navbar ul.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #FAFAF5;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
+}
+
+/* Additional mobile-specific improvements */
+@media (max-width: 768px) {
+  /* Ensure proper spacing on mobile */
+  .frontpage {
+    padding-bottom: 2rem;
+  }
+  
+  /* Breathing animation adjustments */
+  @keyframes breathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+  }
+  
+  /* Timer background adjustment */
+  .timer {
+    background-attachment: scroll;
+    background-position: center center;
+  }
+  
+  /* Ambient cards adjustments */
+  .ambient-cards {
+    margin: 0.8rem auto;
+  }
+  
+  .ambient-cards:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Form element adjustments */
+  input, button {
+    font-size: 1rem;
+  }
+}
+
+
+
+/* High DPI screen optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .mindfulness-box {
+    background-size: cover;
+  }
+}
+
+/* Orientation-specific adjustments */
+@media (max-width: 768px) and (orientation: landscape) {
+  .mindfulness-box {
+    height: 200px;
+  }
+  
+  .breathing {
+    min-height: auto;
+  }
+  
+  .timer {
+    padding: 1.5rem;
+  }
+}
+
+/* Prevent zoom on input focus for iOS */
+@media (max-width: 768px) {
+  input, select, textarea {
+    font-size: 16px; /* Prevents zoom on focus in iOS */
+  }
+}
+
+/* Breathing animation performance optimization */
+@media (max-width: 768px) {
+  .circle {
+    animation: breathe 6s infinite ease-in-out;
+    /* Simplified animation for better performance */
+  }
+  
+  @keyframes breathe {
+    0%, 100% { 
+      transform: scale(1);
+      box-shadow: 0 0 10px rgba(79, 172, 254, 0.5);
+    }
+    50% { 
+      transform: scale(1.3);
+      box-shadow: 0 0 15px rgba(0, 242, 254, 0.7);
+    }
+  }
+}
+
+/* Touch-friendly button enhancements */
+@media (max-width: 768px) {
+  button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 6px;
+  }
+  
+  .timer-section button {
+    margin: 0.5rem;
+  }
+}
+
+/* Text size adjustments for better readability */
+@media (max-width: 768px) {
+  .mindfulness-box p {
+    font-size: 1.1rem;
+    padding: 0.5rem;
+  }
+  
+  .breathing-card h3 {
+    font-size: 1.1rem;
+  }
+  
+  .ambient-cards h3 {
+    font-size: 1.1rem;
+  }
+}
