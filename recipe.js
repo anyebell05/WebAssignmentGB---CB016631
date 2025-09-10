@@ -192,6 +192,11 @@ document.addEventListener("keydown", (e) => {
     }
 });
 
+
+
+
+
+
 // Get meal type buttons
 const breakfastBtn = document.querySelector(".breakfast");
 const lunchBtn = document.querySelector(".lunch");
