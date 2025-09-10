@@ -152,6 +152,7 @@
     "id": 1,
     "title": "Banana Oat Pancakes",
     "mealType": "breakfast",
+    "frontDescription": "These Banana Oat Pancakes are the perfect start to your day—naturally sweet, protein-rich, and fluffy without refined sugar. A quick and healthy twist on classic pancakes!",
     "description": "Fluffy and healthy pancakes made with banana, oats, and egg.",
     "ingredients": [
       "1 ripe banana",
@@ -175,6 +176,7 @@
     "id": 2,
     "title": "Greek Yogurt Parfait",
     "mealType": "breakfast",
+    "frontDescription": "Layered with creamy yogurt, crunchy granola, and fresh berries, this parfait is a delicious balance of taste and nutrition. A refreshing breakfast or post-workout snack!",
     "description": "A protein-packed parfait with yogurt, granola, and berries.",
     "ingredients": [
       "1 cup Greek yogurt",
@@ -197,6 +199,7 @@
     "id": 3,
     "title": "Avocado Egg Salad Wrap",
     "mealType": "lunch",
+    "frontDescription": "Packed with healthy fats and protein, this Avocado Egg Salad Wrap is creamy, filling, and perfect for a light lunch. A simple recipe that keeps you fueled for hours!",
     "description": "A creamy and filling avocado-egg wrap perfect for lunch.",
     "ingredients": [
       "2 boiled eggs",
@@ -220,6 +223,7 @@
     "id": 4,
     "title": "Quinoa Veggie Bowl",
     "mealType": "lunch",
+    "frontDescription": "This Quinoa Veggie Bowl combines plant-based protein with nutrient-rich broccoli and chickpeas. A wholesome and satisfying meal for any fitness lifestyle.",
     "description": "A wholesome bowl with quinoa, broccoli, and chickpeas.",
     "ingredients": [
       "1 cup cooked quinoa",
@@ -243,6 +247,7 @@
     "id": 5,
     "title": "Grilled Salmon & Spinach",
     "mealType": "dinner",
+    "frontDescription": "High in protein and omega-3s, this Grilled Salmon & Spinach dish is as nutritious as it is tasty. A light, energizing dinner ready in just minutes.",
     "description": "Protein-rich grilled salmon served on a bed of spinach.",
     "ingredients": [
       "1 salmon fillet",
@@ -266,6 +271,7 @@
     "id": 6,
     "title": "Chicken & Sweet Potato Bake",
     "mealType": "dinner",
+    "frontDescription": "Juicy chicken paired with sweet, roasted potatoes makes this a balanced and hearty dinner. A one-pan recipe full of flavor and fitness-friendly fuel.",
     "description": "Tender chicken baked with sweet potato and paprika.",
     "ingredients": [
       "1 chicken breast",
@@ -331,7 +337,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <section class="recipe-info">
           <h3>${recipe.title}</h3>
           <hr class="header-hr">
-          <p>${recipe.description}</p>
+          <p>${recipe.frontDescription}</p>
           <button type="button" class="recipe-btn">View Recipe</button>
         </section>
       </section>

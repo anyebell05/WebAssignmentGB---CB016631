@@ -207,35 +207,43 @@ body{
     flex-direction: column;
 }
 
-.search-options{
-  height: 10vh;
+/* Search options container and buttons */
+.search-options {
+  min-height: 3rem;
   display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 1rem;
 }
 
-.search-options button{
-  margin: 0 1.5rem;
-  justify-content: center;
-  align-self: center;
-  padding: 0.7rem 2rem;
+.search-options button {
+  margin-top: 1rem;
+  padding: 0.6rem 1.5rem;
   text-align: center;
-  border-radius: 2px;
+  border-radius: 6px;
   border: 1px solid #6FCF97;
   font-size: 1rem;
   font-weight: 600;
-  background-color: #F4F4F4;
-  color: #000000;
-  transition: 0.3s;
+  background: linear-gradient(90deg, #6FCF97 0%, #7fd982 100%);
+  color: #fff;
+  transition: background 0.25s, color 0.25s, box-shadow 0.25s, transform 0.18s;
   cursor: pointer;
-  border-color: #000000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-
+  box-shadow: 0 2px 8px rgba(111, 207, 151, 0.08);
+  margin-bottom: 0.5rem;
+  outline: none;
+  border: 1px solid #6FCF97;
 }
 
-
-.search-options button:hover{
-  scale: 1.05;
+.search-options button:hover,
+.search-options button:focus {
+  background: #fff;
   color: #6FCF97;
   border: 1px solid #6FCF97;
+  box-shadow: 0 4px 14px rgba(111, 207, 151, 0.16);
+  transform: translateY(-2px) scale(1.04);
 }
 
 #search-form{
@@ -963,19 +971,38 @@ backdrop-filter: blur(30px);  padding: 20px;
     height: auto;
     padding: 1rem;
   }
-  
+
+  .search-options {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .search-options button {
+    padding: 0.45rem 1rem;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    margin-bottom: 0.3rem;
+    min-width: 90px;
+    flex: 1 1 auto;
+    max-width: 48vw;
+    box-sizing: border-box;
+  }
+
   #search-form {
     width: 90%;
     max-width: 500px;
     height: 45px;
   }
-  
+
   .search-box input {
     height: 37px;
     font-size: 0.9em;
     padding: 0 15px;
   }
-  
+
   .fa {
     width: 37px;
     height: 37px;
@@ -1211,11 +1238,20 @@ backdrop-filter: blur(30px);  padding: 20px;
   }
 
 
-  .search-options button{
-  margin: 0 0.8rem;
-  padding: 0.5rem 1.2rem;
-
-}
+  .search-options {
+    gap: 0.3rem;
+    margin-bottom: 0.2rem;
+  }
+  .search-options button {
+    margin: 0;
+    padding: 0.35rem 0.7rem;
+    font-size: 0.88rem;
+    border-radius: 6px;
+    min-width: 80px;
+    max-width: 100vw;
+    flex: 1 1 100px;
+    margin-bottom: 0.2rem;
+  }
 }
 
 /* Prevent horizontal scrolling */
