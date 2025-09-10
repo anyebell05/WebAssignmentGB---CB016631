@@ -117,7 +117,7 @@ body{
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-image: linear-gradient(to bottom, #FAFAF5, #DFF6E4); 
+    background-image: linear-gradient(to bottom, #FAFAF5, #cff9d8); 
     justify-content: flex-end;
     align-items: center;
 }
@@ -128,9 +128,8 @@ body{
   margin-bottom: 2rem;
   color: #6FCF97;
   line-height: 100%;
-
+text-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
 }
-
 .upper-quote p{
     font-size: 1.4rem;
     font-weight: 700;
@@ -143,7 +142,7 @@ body{
     flex: 1;
     display: flex;
     flex-direction: column;
-    background-color: #DFF6E4;
+    background-color: #cff9d8;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -347,7 +346,7 @@ body{
     background-size: cover;
     border-radius: 20px 20px 0 0;
     height: 100%;
-  }
+  } 
 
   .description-bg {
     flex-direction: column;

@@ -167,10 +167,10 @@
                 <section class="footer-content2">
                     <section class="subscription">
                         <h2>Subscribe to our Newsletter</h2>
-                        <form action="#" method="post">
-                            <input type="email" placeholder="Enter your email" required>
-                            <button type="submit">Subscribe</button>
-                        </form>
+                    <form id="subscribeForm" action="#" method="post">
+                        <input type="email" id="emailInput" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
                         <p>Stay updated with the latest news and offers from GreenBite.</p>
                     </section>
                     <section class="footer-copy">
@@ -325,6 +325,24 @@ window.addEventListener('scroll', function() {
   hamburger.addEventListener("click", () => {
       navLinks.classList.toggle("open");
       hamburger.classList.toggle("active");
+  });
+</script>
+
+<script>
+  document.getElementById("subscribeForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // stop page reload
+
+    const email = document.getElementById("emailInput").value.trim();
+
+    if (email) {
+      // Save email(s) in localStorage
+      let emails = JSON.parse(localStorage.getItem("subscribedEmails")) || [];
+      emails.push(email);
+      localStorage.setItem("subscribedEmails", JSON.stringify(emails));
+
+      alert("✅ Thank you for subscribing! Your email has been saved.");
+      this.reset(); // clear the form
+    }
   });
 </script>
 
