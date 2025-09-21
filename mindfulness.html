@@ -111,19 +111,21 @@
                             <img src="./pics/mind/ambient/1.jpg" alt="Rain Sound">
                             <h3>Rain</h3>
                             <p>Relax with the gentle sound of rainfall to reduce stress and calm your mind.</p>
-                            <button onclick="toggleSound('rain')">Click Here</button>
+                            <button onclick="toggleSound('rain', this)">Turn On</button>
                         </section>
+
                         <section class="ambient-cards">
                             <img src="./pics/mind/ambient/2.jpg" alt="Ocean Waves">
                             <h3>Ocean Waves</h3>
                             <p>Immerse yourself in soothing ocean waves to enhance focus and mindfulness.</p>
-                            <button onclick="toggleSound('ocean')">Click Here</button>
+                            <button onclick="toggleSound('ocean', this)">Turn On</button>
                         </section>
+
                         <section class="ambient-cards">
                             <img src="./pics/mind/ambient/3.jpg" alt="Forest Sounds">
                             <h3>Forest Sounds</h3>
                             <p>Experience the calming effects of a forest with birds chirping and leaves rustling.</p>
-                            <button onclick="toggleSound('forest')">Click Here</button>
+                            <button onclick="toggleSound('forest', this)">Turn On</button>
                         </section>
 
                     </section>
@@ -242,11 +244,17 @@ const sounds = {
   forest: new Audio("./sounds/3.mp3")
 };
 
-function toggleSound(name) {
+function toggleSound(name, btn) {
   const sound = sounds[name];
   if (!sound) return;
-  if (sound.paused) sound.play();
-  else sound.pause();
+
+  if (sound.paused) {
+    sound.play();
+    btn.innerText = "Turn Off";
+  } else {
+    sound.pause();
+    btn.innerText = "Turn On";
+  }
 }
 
 // Session Tracking with localStorage
